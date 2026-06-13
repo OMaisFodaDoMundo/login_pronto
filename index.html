@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LOGIN</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <section class="panel" aria-label="Painel de autenticação corporativa">
+        <p class="eyebrow">Sistema interno · Autenticação segura</p>
+        <h1>LOGIN</h1>
+        <p class="subtle">Acesso restrito. Verificação contínua de identidade.</p>
+        <p class="hint">Senha aceita para análise: 123456.</p>
+
+        <form id="loginForm" novalidate>
+          <label for="nick">Nick</label>
+          <input id="nick" name="nick" type="text" autocomplete="nickname" placeholder="Usuário" />
+
+          <label for="password">Senha</label>
+          <div class="password-wrap">
+            <input id="password" name="password" type="password" autocomplete="current-password" placeholder="Digite sua senha: 123456" />
+            <button id="togglePasswordBtn" class="ghost-btn" type="button" aria-label="Mostrar senha">Mostrar</button>
+          </div>
+
+          <button id="submitBtn" type="submit">Entrar</button>
+
+          <p id="feedback" class="feedback" aria-live="polite"></p>
+        </form>
+      </section>
+
+      <footer id="footerNote">© criado por Vitor, 2026</footer>
+
+      <section id="progressLayer" class="progress-layer hidden" aria-live="polite" aria-label="Validação da senha">
+        <div class="progress-card">
+          <p class="progress-title">Validando senha...</p>
+          <div class="progress-track" aria-hidden="true">
+            <div id="progressFill" class="progress-fill"></div>
+          </div>
+          <div class="progress-meta">
+            <span id="progressLabel">1%</span>
+            <span class="progress-caption">Aguarde a conclusão do processo.</span>
+          </div>
+        </div>
+      </section>
+
+      <section id="finalLayer" class="final-layer hidden" aria-live="assertive">
+        <div class="final-card">
+          <p id="finalCode" class="final-code">404</p>
+          <p id="finalTitle" class="final-title">Página não encontrada</p>
+          <p id="finalMessage" class="final-message"></p>
+          <button id="retryBtn" type="button">Tentar novamente</button>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
